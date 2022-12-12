@@ -1,13 +1,14 @@
 import React from 'react';
 import '../App.css';
 
-export const Card = () => (
-     
+export const Card = ({city}) => {
+
+        return(
         <div className="Card">
            <div className='MainInfo'>
                 <img className='icon' alt="icon" src="http://openweathermap.org/img/wn/10d@2x.png"/>
                 <div className='Title'>
-                    New York
+                    {city}
                 </div>
                 <div className='Description'>
                     Cloudy
@@ -25,9 +26,7 @@ export const Card = () => (
                 </div>            
            </div>
         </div>
+        );
       
-);
+};
   
-
-
-export default Card;
