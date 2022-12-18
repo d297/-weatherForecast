@@ -1,6 +1,7 @@
 .Main{
   background-color: #d8d8d8;
   height: 100vh;
+  padding: 25px;
 }
 /*Input Start*/
 .InputWrap{
@@ -8,7 +9,6 @@
   height: 50px;
   border-radius: 12px;
   box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.25);
-  padding: 24px;
   margin-bottom: 24px;
 }
 .Input{
@@ -32,6 +32,12 @@
 .CardList{
   display: flex;
 }
+.Select{
+  margin-bottom: 24px;
+  width: 100%;  
+  padding: 4px 8px;
+}
+
 .Card{
   width: 200px;
   height: fit-content;
@@ -47,6 +53,14 @@
   margin-left: 0;
 }
 */
+.ActionButtonWrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+.ActionButton{
+  background-color: #fff;
+  border: 1px solid black;
+}
 .MainInfo{
   display: flex;
   flex-direction: column;

@@ -1,19 +1,21 @@
-import React, {useState} from 'react';
-import {Input} from './Input';
-import {Card} from './Card';
+import React from 'react';
+import { Input } from './Input';
+import { useCitiesList } from './Hooks/useCitiesList';
+import { CardList } from './CardList';
 import './App.css';
 
-function App() {
-  const [citiesList, setCitiesList] = useState([]);
+export const GlobalContext = React.createContext();
 
+function App() {
+  const [state, dispatch] = useCitiesList();
+  // const { inputValue, citiesList, editingCity } = state;
+  const { citiesList } = state;
   return (
     <div className="Main">
-       <Input setCitiesList={setCitiesList}/>
-      <div className='CardList'>
-       {
-        citiesList.map(city => <Card key={city} city={city}/> )
-       }
-      </div>
+      <GlobalContext.Provider value={{state, dispatch}}>
+        <Input />
+        <CardList citiesList={citiesList} dispatch={dispatch} />
+      </GlobalContext.Provider>
     </div>
   );
 }
