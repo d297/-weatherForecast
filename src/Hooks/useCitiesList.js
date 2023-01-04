@@ -16,10 +16,19 @@ const reducer = (state, action) => {
             const oldArray = state.citiesList;
             const newArray = oldArray.filter(el => el !== action.payload)         
             
-            return {citiesList: newArray};
+            return {
+                ...state,
+                citiesList: newArray, 
+                editingCity: initialState.editingCity,
+                inputValue: initialState.inputValue
+            };
         }
         case 'EDIT_CITY':{   
-            return {...state, inputValue: action.payload, editingCity: action.payload};
+            return {
+                ...state,
+                inputValue: action.payload, 
+                editingCity: action.payload
+            };
         }
         case 'EDIT_CITY_DONE':{   
             const {editingCity} = state;

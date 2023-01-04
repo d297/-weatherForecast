@@ -48,6 +48,8 @@
   color: #fff;
   margin-left: 14px;
   box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.25);
+  text-decoration: none;
+  display: block;
 }
 /*.Card:first-child{
   margin-left: 0;
@@ -89,3 +91,41 @@
   margin-top: 4px;
 }
 /* Card Finish*/
+/*SingleCity Start*/
+.SingleCityWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.DailyCards{
+  margin-top: 24px;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 20px;
+}
+.DailyCard{
+  background-color: #3a8ac0;
+  border-radius:12px;
+  margin-left: 8px;
+  box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.25);
+  color:#fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.DailyTemp::after{
+  content: "°";
+}
+
+.GoBack{
+  color: #fff;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+.GoBack:hover{
+  color: #fff;
+  margin-bottom: 24px;
+  text-decoration: underline;
+}
+/*SingleCity Finish*/

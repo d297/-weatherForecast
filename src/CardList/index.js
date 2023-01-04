@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card } from '../Card';
 import '../App.css';
-// import { GlobalContext } from '../App';
+import { withGlobalState } from '../Hocs/withGlobalState';
 
 
-export class CardList extends React.Component {
+class CardListNoState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,14 +18,17 @@ export class CardList extends React.Component {
         })
     }
 
+    
+
 
     render() {
-        const {citiesList} = this.props;
+        const {citiesList} = this.props.state;
         const {orderBy} = this.state;
         let sortedCitiesList = citiesList.sort();
         if(orderBy === 'desc'){
             sortedCitiesList.reverse();
         }
+        
         return (
             <>
                 <select className='Select' value={orderBy} onChange={this.handleOnChange}>
@@ -42,18 +45,5 @@ export class CardList extends React.Component {
     }
 }
 
-/*
-export const CardList = () => {
-    const {state} = useContext(GlobalContext);
-    const {citiesList} = state;
-    return (
-        <div className="CardList">
-            {
-                citiesList.map(city => <Card key={city} city={city}  />)
-            }
-        </div>
-    );
-};
-*/
-
+export const CardList = withGlobalState(CardListNoState);
 

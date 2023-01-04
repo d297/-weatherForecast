@@ -11,7 +11,6 @@ export const Input = () => {
     const inputRef = useRef(null);
     const handleOnAdd =  () => {
         if(inputValue.length){
-            console.log('INPUT VAL = ' , inputValue);
             dispatch({
                 type: 'ADD_CITY',
                 payload: inputValue
